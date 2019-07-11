@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title> E-Commerce</title>
+    <title> Loja Virtual</title>
     <metacharset="utf-8">
     <link href="css/bootstrap.css" rel="stylesheet"/>
     <link href="css/ecommerce.css" rel="stylesheet"/>
