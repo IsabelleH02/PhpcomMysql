@@ -1,11 +1,10 @@
 <?php
 include("cabecalho.php");
+include("bd.php");
   $nome = $_POST["nome"];
   $preco = $_POST["preco"];
 
   $query ="Insert into PRODUTO (NOME,PRECO) values ('{$nome}', {$preco})";
-
-  $conexao = mysqli_connect ('localhost','root','','ecommerce');
 
   mysqli_query($conexao, $query);
 
