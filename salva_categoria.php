@@ -1,17 +1,21 @@
 <?php
 include("cabecalho.php");
 include("bd.php");
-  $categoria = $_POST["nome_categoria"];
-  $descricao = $_POST["descricao"];
 
-  $query ="Insert into CATEGORIA (NOME,DESCRICAO) values ('{$categoria}', {$descricao})";
+function insereCategoria($conexao,$categoria,$descricao){
+  $query ="Insert into CATEGORIA (NOME,DESCRICAO) values ('{$categoria}', '{$descricao}')";
+  $resultado = mysqli_query($conexao, $query);
+  return $resultado;
+}
 
-  mysqli_query($conexao, $query);
+$categoria = $_POST["nome_categoria"];
+$descricao = $_POST["descricao"];
 
-  if(mysqli_query($conexao, $query)){
-    echo "<p class='alert-success'>A $categoria e $descricao foram inseridos com sucesso!</p>";
+  if(insereCategoria($conexao,$categoria,$descricao)){
+    echo "<p class='text-success'>A $categoria e $descricao foram inseridos com sucesso!</p>";
   }else{
-      echo "<p class='alert-danger'>Ocorreu um erro</p>";
+      echo "<p class='text-danger'>Ocorreu um erro</p>";
+    //  echo msqli_error($conexao); --para aparecer o erro do codigo
   }
 include("rodape.php");
  ?>
