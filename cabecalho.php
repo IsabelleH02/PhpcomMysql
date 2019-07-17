@@ -2,7 +2,7 @@
   <head>
     <title> Loja Virtual</title>
     <metacharset="utf-8">
-    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/ecommerce.css" rel="stylesheet"/>
   </head>
   <body>
@@ -13,12 +13,13 @@
         </div>
         <div>
           <ul class="nav navbar-nav">
-        <div>
-          <li><a href="cadastro_produto.php"> Cadastro de Produtos </a><br>
+          <li><a href="cadastro_produto.php"> Cadastro de Produtos </a>
           <li><a href="cadastro_categoria.php"> Cadastro Categoria </a>
+          <li><a href="listar_produtos.php"> Lista de Produtos</a>
+          <li><a href="listar_categoria.php"> Lista de Categoria</a>
         </ul>
         </div>
       </div>
     </div>
-    <div class="container">
-    <div class="principal">
+      <div class="container">
+        <div class="principal">
