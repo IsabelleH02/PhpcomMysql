@@ -10,6 +10,7 @@ foreach ($categorias as $categoria) {
   <tr>
     <td><?= $categoria['NOME']?></td>
     <td><?= $categoria['DESCRICAO']?></td>
+    <td><a href="remove_categoria.php?id=<?= $categoria['ID'] ?>" class="text-danger" >Remover</a></td>
   </tr>
 <?php
 }

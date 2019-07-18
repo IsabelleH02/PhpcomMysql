@@ -1,15 +1,16 @@
 <?php
 include("cabecalho.php");
 include("bd.php");
+include("categoria_bd.php");
 
 $categoria = $_POST["nome_categoria"];
 $descricao = $_POST["descricao"];
 
   if(insereCategoria($conexao,$categoria,$descricao)){
-    echo "<p class='text-success'>A $categoria e $descricao foram inseridos com sucesso!</p>";
+    header("Location: cadastro_categoria.php?cadastrou=true&nome_categoria={$categoria}");
   }else{
-      echo "<p class='text-danger'>Ocorreu um erro</p>";
-    //  echo msqli_error($conexao); --para aparecer o erro do codigo
+    header("Location: cadastro_categoria.php?cadastrou=false");
+        //  echo msqli_error($conexao); --para aparecer o erro do codigo
   }
 include("rodape.php");
  ?>
