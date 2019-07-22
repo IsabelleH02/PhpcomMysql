@@ -20,4 +20,16 @@ function apagarProduto($conexao,$id){
   $query = "DELETE FROM PRODUTO WHERE ID = {$id}";
   return mysqli_query($conexao,$query);
 }
+
+function buscarProduto($conexao,$id){
+  $query = "SELECT * FROM PRODUTO WHERE ID = {$id}";
+  $resultado = mysqli_query($conexao,$query);
+  $produto = mysqli_fetch_assoc($resultado);
+  return $produto;
+}
+
+function alteraProduto($conexao,$nome,$preco,$id){
+  $query = "UPDATE PRODUTO SET NOME = '{$nome}', PRECO = {$preco} WHERE ID = {$id}";
+  return mysqli_query($conexao,$query);
+}
 ?>

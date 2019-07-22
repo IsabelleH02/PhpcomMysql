@@ -18,6 +18,4 @@ function apagarCategoria($conexao,$id){
   $query = "DELETE FROM CATEGORIA WHERE ID= {$id}";
   return mysqli_query($conexao,$query);
 }
-
-
 ?>
