@@ -18,4 +18,15 @@ function apagarCategoria($conexao,$id){
   $query = "DELETE FROM CATEGORIA WHERE ID= {$id}";
   return mysqli_query($conexao,$query);
 }
+
+function buscarCategoria($conexao,$id){
+  $query ="SELECT * FROM  categoria  WHERE ID = {$id}";
+  $resultado = mysqli_query($conexao,$query);
+  return mysqli_fetch_assoc($resultado);
+}
+
+function alterarCategoria($conexao,$categoria,$descricao,$id){
+  $query = "UPDATE CATEGORIA SET NOME = '{$categoria}', DESCRICAO = {$descricao} WHERE ID = {$id}";
+  return mysqli_query($conexao,$query);
+}
 ?>

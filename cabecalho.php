@@ -15,8 +15,6 @@
           <ul class="nav navbar-nav">
           <li><a href="cadastro_produto.php"> Cadastro de Produtos </a>
           <li><a href="cadastro_categoria.php"> Cadastro Categoria </a>
-          <li><a href="listar_produtos.php"> Lista de Produtos</a>
-          <li><a href="listar_categoria.php"> Lista de Categoria</a>
         </ul>
         </div>
       </div>

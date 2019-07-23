@@ -1,4 +1,6 @@
-<?php include("cabecalho.php"); ?>
+<?php include("cabecalho.php");
+include("bd.php");
+include("categoria_bd.php");?>
 <?php
   if (isset($_GET["cadastrou"])){
     $cadastrou = $_GET["cadastrou"];
@@ -20,6 +22,30 @@
     }
   }
  ?>
+ <?php
+    if(isset($_GET['id'])){
+      $id = $_GET['id'];
+      $categoriaAlteracao = buscarCategoria($conexao, $id);
+      ?>
+      <form action="/salva_categoria.php" method="post">
+          <table class ="table">
+            <input type="hidden" value="<?= $categoriaAlteracao['ID']?>"name="id"/>
+            <tr>
+            <td>Nome :</td>
+             <td><input type="text" name="nome_categoria" value="<?= $categoriaAlteracao['NOME']?>"/></td>
+           </tr>
+           <tr>
+            <td>descrição:</td>
+               <td><input type="text" name="descricao" value="<?= $categoriaAlteracao['DESCRICAO']?>"/></td>
+             </tr>
+             <tr>
+            <td><input class = "btn btn-primary"type="submit" value="Alterar"/></td>
+          </tr>
+          </table>
+        </form>
+        <?php
+            }else{
+          ?>
   <form action="/salva_categoria.php" method="post">
     <table class="table">
       <tr>
@@ -35,5 +61,6 @@
         </tr>
       </table>
     </form>
+        <?php } ?>
 <?php include("listar_categoria.php");?>
 <?php include("rodape.php"); ?>
